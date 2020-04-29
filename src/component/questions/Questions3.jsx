@@ -40,7 +40,7 @@ class Question3 extends Component {
                   id="reponse1ValueInput"
                 />
                 <div className="input-group-append">
-                  <Link to="/categories/peinture/question-4">
+                  <Link to="/categories/peinture/info3">
                     <button
                       renderAs="button"
                       type="button"

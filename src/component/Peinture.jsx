@@ -36,9 +36,13 @@ class Peinture extends Component {
         <Container fluid>
           <Row>
             <div className="containerSmall">
-              <h1>Peinture</h1>
+            <img
+              className="info-image"
+              src="https://collectionapi.metmuseum.org/api/collection/v1/iiif/490036/1006978/restricted"
+              alt=""
+            />
 
-              <div className="containerImg">image</div>
+              <div className="containerImg"></div>
 
               <div>
                 <h2>Quelle est le nom du peintre ?</h2>
@@ -53,7 +57,7 @@ class Peinture extends Component {
                   onChange={this.handleChangeInput}
                 />
                 <div className="input-group-append">
-                  <Link to="/categories/peinture/question-2">
+                  <Link to="/categories/peinture/info1">
                     <button
                       renderAs="button"
                       type="button"
