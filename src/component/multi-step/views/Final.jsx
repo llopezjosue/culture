@@ -10,8 +10,8 @@ function Final() {
         <h1>Merci d'avoir participer les loosers !</h1>
 
         <p>vos reponse</p>
-        <p>1: {values.reponse1ValueInput}</p>
-        <p>2 : {values.reponse2ValueInput}</p>
+        <p>1: {values.step1.reponse1ValueInput}</p>
+        <p>2 : {values.step2.reponse2ValueInput}</p>
       </div>
     </div>
   );
