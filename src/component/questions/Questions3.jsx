@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import axios from "axios";
 
 import { Container, Row, Col } from "reactstrap";
-import "./multi-step/step.css";
 
 /* getApi = () => {
   axios
@@ -12,7 +11,7 @@ import "./multi-step/step.css";
 /*  .then(res => this.setState({ oeuvres: res.data }));
 }; */
 
-class Peinture extends Component {
+class Question3 extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,7 +24,7 @@ class Peinture extends Component {
         <Container fluid>
           <Row>
             <div className="containerSmall">
-              <h1>Peinture</h1>
+              <h1>Question 3</h1>
 
               <div className="containerImg">image</div>
 
@@ -56,4 +55,4 @@ class Peinture extends Component {
 
 /* Peinture.propTypes = {}; */
 
-export default Peinture;
+export default Question3;
