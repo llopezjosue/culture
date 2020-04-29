@@ -4,6 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { Container, Row, Col } from "reactstrap";
 import "./multi-step/step.css";
+import question from "./question.svg";
 
 /* getApi = () => {
   axios
@@ -44,9 +45,9 @@ class Peinture extends Component {
   render() {
     const displayBtnSuivant = () =>
       this.state.isValidResponse ? (
-        <Link to="/categories/peinture/question-2">
-          <button renderAs="button" type="button" class="btn btn-primary">
-            Question suivante
+        <Link to="/categories/peinture/info1">
+          <button renderAs="button" type="button" class="btn btn-primary btn-lg">
+            Dites m'en plus
           </button>
         </Link>
       ) : null;
@@ -56,33 +57,45 @@ class Peinture extends Component {
         <div className="alert-error">C'est une mauvaise réponse !</div>
       );
 
-    console.log(this.state.countResponse);
+    const cover = {
+      backgroundImage: `url(https://collectionapi.metmuseum.org/api/collection/v1/iiif/490036/1006978/restricted)`,
+    };
 
     return (
       <div>
         <Container fluid>
           <Row>
+            {/* <img
+              className="info-image"
+              src="https://collectionapi.metmuseum.org/api/collection/v1/iiif/490036/1006978/restricted"
+              alt=""
+            /> */}
             <div className="containerSmall shadow-lg">
-              <h1>Peinture</h1>
+              <h1>Question 1</h1>
 
-              <div className="containerImg">image</div>
+              <div className="containerImg" style={cover}></div>
 
               <div>
-                <h2 className="h2Question">Quelle est le nom du peintre ?</h2>
+                <h2 className="h2Question">
+                  <img src={question} alt="question" />
+                  Quelle est le nom du peintre ?
+                </h2>
               </div>
 
               <div className="mb-3 input-group">
                 <input
                   placeholder="ecrivez votre réponse"
-                  class="form-control"
+                  class="form-control form-control-lg"
                   name="reponse1ValueInput"
                   id="reponse1ValueInput"
                   onChange={this.handleChangeInput}
-                  style={this.state.isValidResponse === false ? null : { marginRight: "15px" }}
+                  style={
+                    this.state.isValidResponse === false ? null : { marginRight: "15px" }
+                  }
                 />
                 <div className="input-group-append">{displayBtnSuivant()}</div>
               </div>
-              {displayMessageError()}
+              {/* {displayMessageError()} */}
             </div>
           </Row>
         </Container>

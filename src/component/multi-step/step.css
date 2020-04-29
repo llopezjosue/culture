@@ -2,6 +2,8 @@
     height: 350px;
     width: 500px;
     background-color: #ddd;
+    background-position: center;
+    background-size: cover;
 }
 
 .containerSmall {
@@ -11,6 +13,15 @@
     max-width: auto;
     padding: 1rem;
     margin-top: 3rem;
+}
+
+.containerSmall h1{
+    background-color: #000;
+    padding: 20px;
+    margin-top: 7px;
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
 }
 
 .alert-error {
@@ -28,10 +39,12 @@
 
 .h2Question {
     background-color: #000;
-    background-image: linear-gradient(to right top, #212122, #1c1d1e, #171919, #131414, #0e0f0e);
-    padding: 30px;
+  
+    padding: 20px;
     margin-top: 7px;
     color: white;
     border-radius: 5px;
     font-size: 20px;
 }
+
+h2 img {margin-right:10px}
