@@ -19,6 +19,7 @@ class Peinture extends Component {
       oeuvres: [],
       valueInput: "",
       isValidResponse: false,
+      countResponse: 0,
     };
 
     this.handleChangeInput = this.handleChangeInput.bind(this);
@@ -26,22 +27,48 @@ class Peinture extends Component {
 
   handleChangeInput(event) {
     this.setState({ valueInput: event.target.value });
+    this.setState({ countResponse: this.state.countResponse + 1 });
+  }
+
+  componentDidMount() {}
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.valueInput !== prevState.valueInput) {
+      //bonne reponse =  Salvador Dali
+      if (this.state.valueInput === "toto") {
+        this.setState({ isValidResponse: true });
+      }
+    }
   }
 
   render() {
-    console.log(this.state.valueInput);
+    const displayBtnSuivant = () =>
+      this.state.isValidResponse ? (
+        <Link to="/categories/peinture/question-2">
+          <button renderAs="button" type="button" class="btn btn-primary">
+            Question suivante
+          </button>
+        </Link>
+      ) : null;
+
+    const displayMessageError = () =>
+      this.state.countResponse <= 1 && this.state.isValidResponse === false ? null : (
+        <div className="alert-error">C'est une mauvaise réponse !</div>
+      );
+
+    console.log(this.state.countResponse);
 
     return (
       <div>
         <Container fluid>
           <Row>
-            <div className="containerSmall">
+            <div className="containerSmall shadow-lg">
               <h1>Peinture</h1>
 
               <div className="containerImg">image</div>
 
               <div>
-                <h2>Quelle est le nom du peintre ?</h2>
+                <h2 className="h2Question">Quelle est le nom du peintre ?</h2>
               </div>
 
               <div className="mb-3 input-group">
@@ -51,19 +78,11 @@ class Peinture extends Component {
                   name="reponse1ValueInput"
                   id="reponse1ValueInput"
                   onChange={this.handleChangeInput}
+                  style={this.state.isValidResponse === false ? null : { marginRight: "15px" }}
                 />
-                <div className="input-group-append">
-                  <Link to="/categories/peinture/question-2">
-                    <button
-                      renderAs="button"
-                      type="button"
-                      class="btn btn-outline-secondary"
-                    >
-                      Vérifier
-                    </button>
-                  </Link>
-                </div>
+                <div className="input-group-append">{displayBtnSuivant()}</div>
               </div>
+              {displayMessageError()}
             </div>
           </Row>
         </Container>
