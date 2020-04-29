@@ -24,33 +24,9 @@ class Question2 extends Component {
         <Container fluid>
           <Row>
             <div className="containerSmall">
-              <h1>Question 2</h1>
+              <h1>Resultat afficahge</h1>
 
               <div className="containerImg">image</div>
-
-              <div>
-                <h2>Quelle est le nom du peintre ?</h2>
-              </div>
-
-              <div className="mb-3 input-group">
-                <input
-                  placeholder="ecrivez votre réponse"
-                  class="form-control"
-                  name="reponse1ValueInput"
-                  id="reponse1ValueInput"
-                />
-                <div className="input-group-append">
-                  <Link to="/categories/peinture/question-3">
-                    <button
-                      renderAs="button"
-                      type="button"
-                      class="btn btn-outline-secondary"
-                    >
-                      Vérifier
-                    </button>
-                  </Link>
-                </div>
-              </div>
             </div>
           </Row>
         </Container>

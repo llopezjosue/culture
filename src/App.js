@@ -7,6 +7,7 @@ import Peinture from "./component/Peinture";
 import Questions2 from "./component/questions/Questions2";
 import Questions3 from "./component/questions/Questions3";
 import Questions4 from "./component/questions/Questions4";
+import Resultat from "./component/questions/Resultat";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route exact path="/categories/peinture/question-2" component={Questions2} />
           <Route exact path="/categories/peinture/question-3" component={Questions3} />
           <Route exact path="/categories/peinture/question-4" component={Questions4} />
+          <Route exact path="/categories/peinture/resultat" component={Resultat} />
         </Switch>
       </BrowserRouter>
     </div>

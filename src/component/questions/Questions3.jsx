@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 /* import PropTypes from "prop-types"; */
 import axios from "axios";
-
+import { Link } from "react-router-dom";
 import { Container, Row, Col } from "reactstrap";
 
 /* getApi = () => {
@@ -40,9 +40,15 @@ class Question3 extends Component {
                   id="reponse1ValueInput"
                 />
                 <div className="input-group-append">
-                  <button type="button" class="btn btn-outline-secondary">
-                    Ma réponse
-                  </button>
+                  <Link to="/categories/peinture/question-4">
+                    <button
+                      renderAs="button"
+                      type="button"
+                      class="btn btn-outline-secondary"
+                    >
+                      Vérifier
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>

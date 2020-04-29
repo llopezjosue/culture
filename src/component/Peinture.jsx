@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 /* import PropTypes from "prop-types"; */
 import axios from "axios";
-
+import { Link } from "react-router-dom";
 import { Container, Row, Col } from "reactstrap";
 import "./multi-step/step.css";
 
@@ -17,9 +17,20 @@ class Peinture extends Component {
     super(props);
     this.state = {
       oeuvres: [],
+      valueInput: "",
+      isValidResponse: false,
     };
+
+    this.handleChangeInput = this.handleChangeInput.bind(this);
   }
+
+  handleChangeInput(event) {
+    this.setState({ valueInput: event.target.value });
+  }
+
   render() {
+    console.log(this.state.valueInput);
+
     return (
       <div>
         <Container fluid>
@@ -39,11 +50,18 @@ class Peinture extends Component {
                   class="form-control"
                   name="reponse1ValueInput"
                   id="reponse1ValueInput"
+                  onChange={this.handleChangeInput}
                 />
                 <div className="input-group-append">
-                  <button type="button" class="btn btn-outline-secondary">
-                    Ma réponse
-                  </button>
+                  <Link to="/categories/peinture/question-2">
+                    <button
+                      renderAs="button"
+                      type="button"
+                      class="btn btn-outline-secondary"
+                    >
+                      Vérifier
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
