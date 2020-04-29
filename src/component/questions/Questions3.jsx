@@ -1,49 +1,30 @@
 import React, { Component } from "react";
 /* import PropTypes from "prop-types"; */
 import axios from "axios";
-import Oeuvres from "./Oeuvres";
 import { Link } from "react-router-dom";
 import { Container, Row, Col } from "reactstrap";
-import "./multi-step/step.css";
 
-class Peinture extends Component {
+/* getApi = () => {
+  axios
+    .get("https://collectionapi.metmuseum.org/public/collection/v1/objects/[objectID]")
+    /* .then(res => console.log(res)); */
+/*  .then(res => this.setState({ oeuvres: res.data }));
+}; */
+
+class Question3 extends Component {
   constructor(props) {
     super(props);
     this.state = {
       oeuvres: [],
-      valueInput: "",
-      isValidResponse: false,
     };
-
-    this.handleChangeInput = this.handleChangeInput.bind(this);
   }
-  getApi = () => {
-    axios
-      .get(
-        "https://collectionapi.metmuseum.org/public/collection/v1/objects/488221"
-      )
-      .then((response) => response.data)
-      .then((res) => console.log(res))
-      .then((res) => this.setState({ oeuvres: res }));
-  };
-  componentDidMount() {
-    this.getApi();
-  }
-
-  handleChangeInput(event) {
-    this.setState({ valueInput: event.target.value });
-  }
-
   render() {
-    console.log(this.state.valueInput);
-
     return (
       <div>
         <Container fluid>
           <Row>
             <div className="containerSmall">
-              <h1>Peinture</h1>
-              {<Oeuvres oeuvres={this.state.oeuvres} />}
+              <h1>Question 3</h1>
 
               <div className="containerImg">image</div>
 
@@ -57,10 +38,9 @@ class Peinture extends Component {
                   class="form-control"
                   name="reponse1ValueInput"
                   id="reponse1ValueInput"
-                  onChange={this.handleChangeInput}
                 />
                 <div className="input-group-append">
-                  <Link to="/categories/peinture/question-2">
+                  <Link to="/categories/peinture/question-4">
                     <button
                       renderAs="button"
                       type="button"
@@ -81,4 +61,4 @@ class Peinture extends Component {
 
 /* Peinture.propTypes = {}; */
 
-export default Peinture;
+export default Question3;

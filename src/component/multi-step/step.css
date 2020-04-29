@@ -1,0 +1,12 @@
+.containerImg {
+    height: 350px;
+    width: 500px;
+    background-color: #ddd;
+}
+
+.containerSmall {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 500px;
+}

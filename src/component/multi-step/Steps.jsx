@@ -14,9 +14,16 @@ export default [
     initialValues: {
       reponse1ValueInput: "",
     },
+
     validationSchema: object().shape({
-      reponse1ValueInput: string().required(),
+        reponse1ValueInput: string().required(),
     }),
+  
+    onAction: (sectionValues, formValues) => {
+      if (sectionValues.reponse1ValueInput === "toto") {
+        throw new Error("Please, choose a better name!");
+      }
+    },
   },
   {
     id: "Step2",
@@ -52,17 +59,38 @@ export default [
   {
     id: "Final",
     component: Final,
-    initialValues: {
-      final: "",
-    },
-    validationSchema: object().shape({
-      final: string().required(),
-    }),
-    actionLabel: "Proceed",
-    onAction: (sectionValues, formValues) => {
-      if (sectionValues.reponse2ValueInput === "argh!") {
-        throw new Error("Please, choose a better name!");
-      }
-    },
   },
 ];
+
+// [
+//     {
+//       id: 'personal',
+//       component: PersonalInfo,
+//       initialValues: {
+//         userName: '',
+//       },
+//       validationSchema: object().shape({
+//         userName: string().required(),
+//       }),
+//     },
+//     {
+//       id: 'company',
+//       component: CompanyInfo,
+//       initialValues: {
+//         companyName: '',
+//       },
+//       validationSchema: object().shape({
+//         companyName: string().required(),
+//       }),
+//       actionLabel: 'Proceed',
+//       onAction: (sectionValues, formValues) => {
+//         if (sectionValues.companyName === 'argh!') {
+//           throw new Error('Please, choose a better name!')
+//         }
+//       },
+//     },
+//     {
+//       id: 'summary',
+//       component: Summary,
+//     },
+//   ]
