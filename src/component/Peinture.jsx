@@ -2,7 +2,7 @@ import React, { Component } from "react";
 /* import PropTypes from "prop-types"; */
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { Container, Row, Col } from "reactstrap";
+import { Container, Row, Col, Button, UncontrolledPopover, PopoverHeader, PopoverBody } from "reactstrap";
 import "./multi-step/step.css";
 import question from "./question.svg";
 
@@ -65,16 +65,6 @@ class Peinture extends Component {
       <div>
         <Container fluid>
           <Row>
-<<<<<<< HEAD
-            <div className="containerSmall">
-            <img
-              className="info-image"
-              src="https://collectionapi.metmuseum.org/api/collection/v1/iiif/490036/1006978/restricted"
-              alt=""
-            />
-
-              <div className="containerImg"></div>
-=======
             {/* <img
               className="info-image"
               src="https://collectionapi.metmuseum.org/api/collection/v1/iiif/490036/1006978/restricted"
@@ -84,7 +74,6 @@ class Peinture extends Component {
               <h1>Question 1</h1>
 
               <div className="containerImg" style={cover}></div>
->>>>>>> 4ab44eb6311502ec3f32d5c71ccdc90ad9f03cd5
 
               <div>
                 <h2 className="h2Question">
@@ -104,25 +93,21 @@ class Peinture extends Component {
                     this.state.isValidResponse === false ? null : { marginRight: "15px" }
                   }
                 />
-<<<<<<< HEAD
-                <div className="input-group-append">
-                  <Link to="/categories/peinture/info1">
-                    <button
-                      renderAs="button"
-                      type="button"
-                      class="btn btn-outline-secondary"
-                    >
-                      Vérifier
-                    </button>
-                  </Link>
-                </div>
-=======
                 <div className="input-group-append">{displayBtnSuivant()}</div>
->>>>>>> 4ab44eb6311502ec3f32d5c71ccdc90ad9f03cd5
               </div>
               {/* {displayMessageError()} */}
             </div>
           </Row>
+          <div>
+              <Button id="PopoverLegacy" type="button">
+              Un indice Sherlock ?
+              </Button>
+                <UncontrolledPopover trigger="legacy" placement="bottom" target="PopoverLegacy">
+                <PopoverHeader>Et voici, mon cher Whatson:</PopoverHeader>
+                <PopoverBody>
+                Ce fameux peintre espagnol possède une sacrée moustache !</PopoverBody>
+                </UncontrolledPopover>
+            </div>
         </Container>
       </div>
     );
