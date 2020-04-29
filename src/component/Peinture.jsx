@@ -3,8 +3,9 @@ import React, { Component } from "react";
 import axios from "axios";
 import FormikWizard from "formik-wizard";
 import steps from "./multi-step/Steps";
-import { Link } from 'react-router-dom';
-
+import Oeuvre from "./Oeuvres";
+import { Link } from "react-router-dom";
+/* 
 const FormWrapper = ({
   children,
   isLastStep,
@@ -17,10 +18,10 @@ const FormWrapper = ({
     <div>
       {status && (
         <div>
-          {/* {status.message} */}
-          <hr />
-        </div>
-      )}
+          {/* {status.message} */
+/*  <hr />
+        </div> */
+/*      )}
 
       <hr />
       {children}
@@ -42,13 +43,6 @@ const FormWrapper = ({
       </div>
     </div>
   );
-};
-
-/* getApi = () => {
-  axios
-    .get("https://collectionapi.metmuseum.org/public/collection/v1/objects/[objectID]")
-    /* .then(res => console.log(res)); */
-/*  .then(res => this.setState({ oeuvres: res.data }));
 }; */
 
 class Peinture extends Component {
@@ -58,6 +52,19 @@ class Peinture extends Component {
       oeuvres: [],
     };
   }
+  getApi = () => {
+    axios
+      .get(
+        "https://collectionapi.metmuseum.org/public/collection/v1/objects/488221"
+      )
+      .then((response) => response.data)
+      .then((res) => console.log(res))
+      .then((res) => this.setState({ oeuvres: res }));
+  };
+  componentDidMount() {
+    this.getApi();
+  }
+
   render() {
     // const handleSubmit = React.useCallback((values) => {
     //   console.log("full values:", values);
@@ -70,14 +77,12 @@ class Peinture extends Component {
     return (
       <div>
         <h1>Peinture</h1>
-        
-        {/* 
-        <FormikWizard steps={steps} onSubmit={handleSubmit} render={FormWrapper} /> */}
-        <FormikWizard steps={steps} render={FormWrapper} />
+        {<Oeuvre oeuvres={this.state.oeuvres} />}
       </div>
     );
   }
 }
+
 /* Peinture.propTypes = {}; */
 
 export default Peinture;
