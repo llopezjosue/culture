@@ -171,6 +171,18 @@ class Peinture extends Component {
           {/* //////////////////////////////////////////////////////////////////// */}
           {/* //////////////////////////////////////////////////////////////////// */}
         </Container>
+        <div className="fixed-solution ">
+        <Button id="solution" type="button">
+ 
+
+        Solution
+        </Button>
+        <UncontrolledPopover trigger="legacy" placement="bottom" target="solution">
+        <PopoverHeader>Et voici :</PopoverHeader>
+        <PopoverBody>
+          Dali </PopoverBody>
+        </UncontrolledPopover>
+        </div>
       </div>
     );
   }

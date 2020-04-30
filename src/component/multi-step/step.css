@@ -1,6 +1,6 @@
 .containerImg {
   height: 350px;
-  width: 580px;
+  width:780px;
   background-color: #ddd;
   background-position: center;
   background-size: cover;
@@ -33,8 +33,8 @@
 
 .btn-primary {
   color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: #4c7f55!important;
+  border-color:#4c7f55!important;
 }
 
 .h2Question {
@@ -53,4 +53,9 @@ h2 img {
 
 .max-with-info-img {
   max-width: 600px;
+}
+
+
+.para{
+  font-size: 12px;
 }

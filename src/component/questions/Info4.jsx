@@ -34,26 +34,26 @@ class Info4 extends Component {
               <div className="card">
                 <img className="card-img-top" src={cover1} alt="Card image cap" />
                 <div className="card-body">
-                  <h3 className="card-title">{oeuvres.artistDisplayName}</h3>
-                  <h5>{oeuvres.artistDisplayBio}</h5>
+                  <h3 className="card-title"> Léonardo Da Vinci </h3>
+                  
 
                   <hr />
                   <p className="card-text">
-                    <strong>Titre de l'oeuvre :</strong> {oeuvres.title}
+                    <strong>Titre de l'oeuvre :</strong> La Joconde
                   </p>
                   <p className="card-text">
-                    <strong>Peint en </strong> {oeuvres.objectDate}
+                    <strong>Peint en </strong> 1503 - 1506
                   </p>
                   <hr />
-                  <p className="card-text"> Réalisé par le biais d'{oeuvres.medium}</p>
+                  <p className="card-text"> Réalisé par le biais d'Oil on wood</p>
                   <hr />
                   <p className="card-text">
-                    <strong>Exposé au musée :</strong> {oeuvres.repository}
+                    <strong>Exposé au musée :</strong> Le Louvre
                   </p>
 
                   <Link to="/categories/peinture/resultat">
                     <button renderAs="button" type="button" class="btn btn-primary btn-b">
-                      Question suivante
+                      Voir mes résultats
                     </button>
                   </Link>
                 </div>
