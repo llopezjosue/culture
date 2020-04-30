@@ -16,8 +16,20 @@ class Question2 extends Component {
     super(props);
     this.state = {
       oeuvres: [],
+      temppasse: 0,
     };
   }
+
+  componentDidMount() {
+    const moment = require("moment");
+    let dateNow = moment().format("YYYY-MM-DD-hh-mm-ss");
+    dateNow = moment(dateNow.split("-"));
+    if (dateNow && this.props.dateStart) {
+      const secondLeft = dateNow.diff(this.props.dateStart, "s");
+      this.setState({ temppasse: secondLeft });
+    }
+  }
+
   render() {
     return (
       <div>
@@ -27,6 +39,8 @@ class Question2 extends Component {
               <h1>Resultat afficahge</h1>
 
               <div className="containerImg">image</div>
+
+              <p> bravos vous avez mis {this.state.temppasse} secondes pour répondes</p>
             </div>
           </Row>
         </Container>

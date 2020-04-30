@@ -97,6 +97,18 @@ body {
   max-width: 500px !important;
 }
 
-.logo.small{max-width: 150px;}
+.logo.small {
+  max-width: 150px;
+}
 
-.max-content-cat h1 {font-size: 23px;}
+.max-content-cat h1 {
+  font-size: 23px;
+}
+
+.fixed-tips {
+  osition: fixed;
+  text-align: right;
+  right: 0;
+  top: 0;
+  margin: 2rem;
+}

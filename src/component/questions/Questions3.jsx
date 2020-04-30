@@ -101,7 +101,7 @@ class Question3 extends Component {
               {/* {displayMessageError()} */}
             </div>
           </Row>
-          <div>
+          <div className="fixed-tips">
             <Button id="PopoverLegacy" type="button">
               Un indice Sherlock ?
             </Button>

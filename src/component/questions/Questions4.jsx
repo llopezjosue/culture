@@ -101,6 +101,19 @@ class Question4 extends Component {
               {/* {displayMessageError()} */}
             </div>
           </Row>
+          <div className="fixed-tips">
+            <Button id="PopoverLegacy" type="button">
+              Un indice Sherlock ?
+            </Button>
+            <UncontrolledPopover
+              trigger="legacy"
+              placement="bottom"
+              target="PopoverLegacy"
+            >
+              <PopoverHeader>Mes couilles sur ton front:</PopoverHeader>
+              <PopoverBody>si ma mére en avait deux je l'appelerai papa</PopoverBody>
+            </UncontrolledPopover>
+          </div>
         </Container>
       </div>
     );
