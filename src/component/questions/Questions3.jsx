@@ -2,9 +2,18 @@ import React, { Component } from "react";
 /* import PropTypes from "prop-types"; */
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { Container, Row, Col } from "reactstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Button,
+  UncontrolledPopover,
+  PopoverHeader,
+  PopoverBody,
+} from "reactstrap";
 import "../multi-step/step.css";
 import question from "../question.svg";
+import Logo from "../logo.png";
 class Question3 extends Component {
   constructor(props) {
     super(props);
@@ -39,7 +48,7 @@ class Question3 extends Component {
       this.state.isValidResponse ? (
         <Link to="/categories/peinture/info3">
           <button renderAs="button" type="button" class="btn btn-primary btn-lg">
-          Dites m'en plus
+            Dites m'en plus
           </button>
         </Link>
       ) : null;
@@ -49,21 +58,25 @@ class Question3 extends Component {
         <div className="alert-error">C'est une mauvaise réponse !</div>
       );
 
-
-      const cover = {
-        backgroundImage: `url(https://collectionapi.metmuseum.org/api/collection/v1/iiif/488221/1009264/restricted)`,
-      };
-
+    const cover = {
+      backgroundImage: `url(https://collectionapi.metmuseum.org/api/collection/v1/iiif/488221/1009264/restricted)`,
+    };
 
     return (
       <div>
         <Container fluid>
+          <Link to="/">
+            <img
+              src={Logo}
+              class="rounded mx-auto d-block small logo"
+              alt="logoculture"
+            ></img>
+          </Link>
           <Row>
-            
             <div className="containerSmall shadow-lg">
               <h1>Question 3</h1>
 
-              <div className="containerImg"  style={cover} ></div>
+              <div className="containerImg" style={cover}></div>
 
               <div>
                 <h2 className="h2Question">
@@ -74,7 +87,7 @@ class Question3 extends Component {
 
               <div className="mb-3 input-group">
                 <input
-                  placeholder="ecrivez votre réponse"
+                  placeholder="Écrivez votre réponse"
                   class="form-control form-control-lg"
                   name="reponse1ValueInput"
                   id="reponse1ValueInput"
@@ -88,6 +101,19 @@ class Question3 extends Component {
               {/* {displayMessageError()} */}
             </div>
           </Row>
+          <div>
+            <Button id="PopoverLegacy" type="button">
+              Un indice Sherlock ?
+            </Button>
+            <UncontrolledPopover
+              trigger="legacy"
+              placement="bottom"
+              target="PopoverLegacy"
+            >
+              <PopoverHeader>Et voici, mon cher Whatson:</PopoverHeader>
+              <PopoverBody>Ta mère l'avaleuse de chibre</PopoverBody>
+            </UncontrolledPopover>
+          </div>
         </Container>
       </div>
     );

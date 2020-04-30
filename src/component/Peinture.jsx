@@ -2,16 +2,10 @@ import React, { Component } from "react";
 /* import PropTypes from "prop-types"; */
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { Container, Row, Col } from "reactstrap";
+import { Container, Row, Col, Button, UncontrolledPopover, PopoverHeader, PopoverBody } from "reactstrap";
 import "./multi-step/step.css";
 import question from "./question.svg";
-
-/* getApi = () => {
-  axios
-    .get("https://collectionapi.metmuseum.org/public/collection/v1/objects/[objectID]")
-    /* .then(res => console.log(res)); */
-/*  .then(res => this.setState({ oeuvres: res.data }));
-}; */
+import Logo from "./logo.png";
 
 class Peinture extends Component {
   constructor(props) {
@@ -31,7 +25,17 @@ class Peinture extends Component {
     this.setState({ countResponse: this.state.countResponse + 1 });
   }
 
-  componentDidMount() {}
+  getApi = () => {
+    axios
+      .get("https://collectionapi.metmuseum.org/public/collection/v1/objects/488221")
+      .then((res) => this.setState({ oeuvres: res.data }));
+  };
+
+  componentDidMount() {
+    this.getApi();
+
+  
+  }
 
   componentDidUpdate(prevProps, prevState) {
     if (this.state.valueInput !== prevState.valueInput) {
@@ -42,7 +46,15 @@ class Peinture extends Component {
     }
   }
 
+
+
+  
   render() {
+
+
+    console.log(this.state.oeuvres.artistAlphaSort)
+
+
     const displayBtnSuivant = () =>
       this.state.isValidResponse ? (
         <Link to="/categories/peinture/info1">
@@ -64,6 +76,9 @@ class Peinture extends Component {
     return (
       <div>
         <Container fluid>
+        <Link to="/" >
+    <img src={Logo} class="rounded mx-auto d-block small logo" alt="logoculture"></img>
+    </Link>
           <Row>
             {/* <img
               className="info-image"
@@ -84,7 +99,7 @@ class Peinture extends Component {
 
               <div className="mb-3 input-group">
                 <input
-                  placeholder="ecrivez votre réponse"
+                  placeholder="Écrivez votre réponse"
                   class="form-control form-control-lg"
                   name="reponse1ValueInput"
                   id="reponse1ValueInput"
@@ -98,6 +113,16 @@ class Peinture extends Component {
               {/* {displayMessageError()} */}
             </div>
           </Row>
+          <div>
+              <Button id="PopoverLegacy" type="button">
+              Un indice Sherlock ?
+              </Button>
+                <UncontrolledPopover trigger="legacy" placement="bottom" target="PopoverLegacy">
+                <PopoverHeader>Et voici, mon cher Whatson:</PopoverHeader>
+                <PopoverBody>
+                Ce fameux peintre espagnol possède une sacrée moustache !</PopoverBody>
+                </UncontrolledPopover>
+            </div>
         </Container>
       </div>
     );

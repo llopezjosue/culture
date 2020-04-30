@@ -2,9 +2,18 @@ import React, { Component } from "react";
 /* import PropTypes from "prop-types"; */
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { Container, Row, Col } from "reactstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Button,
+  UncontrolledPopover,
+  PopoverHeader,
+  PopoverBody,
+} from "reactstrap";
 import "../multi-step/step.css";
 import question from "../question.svg";
+import Logo from "../logo.png";
 class Question4 extends Component {
   constructor(props) {
     super(props);
@@ -39,7 +48,7 @@ class Question4 extends Component {
       this.state.isValidResponse ? (
         <Link to="/categories/peinture/info4">
           <button renderAs="button" type="button" class="btn btn-primary btn-lg">
-          Dites m'en plus
+            Dites m'en plus
           </button>
         </Link>
       ) : null;
@@ -56,8 +65,14 @@ class Question4 extends Component {
     return (
       <div>
         <Container fluid>
+          <Link to="/">
+            <img
+              src={Logo}
+              class="rounded mx-auto d-block small logo"
+              alt="logoculture"
+            ></img>
+          </Link>
           <Row>
-          
             <div className="containerSmall shadow-lg">
               <h1>Question 4</h1>
 
@@ -65,14 +80,14 @@ class Question4 extends Component {
 
               <div>
                 <h2 className="h2Question">
-                  <img src={question} alt="question"    />
+                  <img src={question} alt="question" />
                   Quelle est le nom du peintre ?
                 </h2>
               </div>
 
               <div className="mb-3 input-group">
                 <input
-                  placeholder="ecrivez votre réponse"
+                  placeholder="Écrivez votre réponse"
                   class="form-control form-control-lg"
                   name="reponse1ValueInput"
                   id="reponse1ValueInput"

@@ -36,3 +36,67 @@
     transform: rotate(360deg);
   }
 }
+
+.body-bg {
+  background-color: #ddd;
+  background-image: linear-gradient(
+    to right top,
+    #181819,
+    #000000,
+    #191919,
+    #3a3a3a,
+    #000000
+  );
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-image: linear-gradient(
+    to right top,
+    #05371a,
+    #134c1d,
+    #28601b,
+    #417514,
+    #5f8a00
+  );
+  background-image: url(https://image.freepik.com/vecteurs-libre/collection-timbres-ville-dans-style-retro_23-2147764786.jpg);
+  background-size: cover;
+}
+
+body {
+  height: 100%;
+}
+
+.button-start {
+  padding: 15px;
+  background-color: #05371a;
+}
+
+.container-image {
+  max-width: 250px !important;
+  max-height: 250px !important;
+  border-radius: 6px;
+}
+
+.container-image img {
+  border-radius: 6px;
+}
+
+.container-image p {
+  font-size: 15px;
+  padding: 3%;
+  margin-bottom: 10%;
+  position: absolute;
+  font-family: Dancing Script, sans-serif;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(0, 0, 0);
+  border-radius: 5%;
+}
+
+.max-content-cat {
+  max-width: 500px !important;
+}
+
+.logo.small{max-width: 150px;}
+
+.max-content-cat h1 {font-size: 23px;}
