@@ -1,50 +1,61 @@
 .containerImg {
-    height: 350px;
-    width: 500px;
-    background-color: #ddd;
-    background-position: center;
-    background-size: cover;
+  height: 350px;
+  width:780px;
+  background-color: #ddd;
+  background-position: center;
+  background-size: cover;
 }
 
 .containerSmall {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    max-width: auto;
-    padding: 1rem;
-    margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: auto;
+  padding: 1rem;
+  /* margin-top: 3rem; */
 }
 
-.containerSmall h1{
-    background-color: #000;
-    padding: 20px;
-    margin-top: 7px;
-    color: white;
-    border-radius: 5px;
-    font-size: 20px;
+.containerSmall h1 {
+  background-color: #4c7f55;
+  padding: 20px;
+  margin-top: 7px;
+  color: white;
+  border-radius: 5px;
+  font-size: 20px;
 }
 
 .alert-error {
-    background-color: #da2c2c;
-    padding: 30px;
-    border-radius: 5px;
-    color: white;
+  background-color: #da2c2c;
+  padding: 30px;
+  border-radius: 5px;
+  color: white;
 }
 
 .btn-primary {
-    color: #fff;
-    background-color: #007bff;
-    border-color: #007bff;
+  color: #fff;
+  background-color: #4c7f55!important;
+  border-color:#4c7f55!important;
 }
 
 .h2Question {
-    background-color: #000;
-  
-    padding: 20px;
-    margin-top: 7px;
-    color: white;
-    border-radius: 5px;
-    font-size: 20px;
+  background-color: #4c7f55;
+
+  padding: 20px;
+  margin-top: 7px;
+  color: white;
+  border-radius: 5px;
+  font-size: 20px;
 }
 
-h2 img {margin-right:10px}
+h2 img {
+  margin-right: 10px;
+}
+
+.max-with-info-img {
+  max-width: 600px;
+}
+
+
+.para{
+  font-size: 12px;
+}
