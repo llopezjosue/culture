@@ -4,6 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Button, UncontrolledPopover, PopoverHeader, PopoverBody } from "reactstrap";
 import "./multi-step/step.css";
+import kahoot from "./questions/kahoot.mp3";
 import question from "./question.svg";
 
 /* getApi = () => {
@@ -108,7 +109,11 @@ class Peinture extends Component {
                 Ce fameux peintre espagnol possède une sacrée moustache !</PopoverBody>
                 </UncontrolledPopover>
             </div>
+            <div>
+        <audio ref="audio_tag" src={kahoot} controls autoPlay/>
+      </div>
         </Container>
+
       </div>
     );
   }

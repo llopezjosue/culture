@@ -9,7 +9,6 @@ const Home = (props) =>{
   <div className="TitleHome">
       <img src={Logo} class="rounded mx-auto d-block" alt="logoculture"></img>
       <Button  tag={Link} to="/categories" color="primary"> En route !</Button>
-
   </div>
   );
 }

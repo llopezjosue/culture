@@ -89,8 +89,8 @@ class Question3 extends Component {
             </div>
         
           </Row>
-          <div>
-            <Button id="PopoverLegacy" type="button">
+            <div>
+              <Button id="PopoverLegacy" type="button">
                 Un indice Sherlock ?
                 </Button>
                 <UncontrolledPopover trigger="legacy" placement="bottom" target="PopoverLegacy">
