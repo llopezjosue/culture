@@ -40,6 +40,12 @@ class Question4 extends Component {
       if (this.state.valueInput === "le Louvre") {
         this.setState({ isValidResponse: true });
       }
+      if (this.state.valueInput === "Le Louvre") {
+        this.setState({ isValidResponse: true });
+      }
+      if (this.state.valueInput === "le louvre") {
+        this.setState({ isValidResponse: true });
+      }
     }
   }
 

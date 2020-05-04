@@ -12,7 +12,6 @@ import {
   PopoverBody,
 } from "reactstrap";
 import "./multi-step/step.css";
-import kahoot from "./questions/kahoot.mp3";
 import question from "./question.svg";
 import Logo from "./logo.png";
 
@@ -49,6 +48,9 @@ class Peinture extends Component {
     if (this.state.valueInput !== prevState.valueInput) {
       //bonne reponse =  Salvador Dali
       if (this.state.valueInput === "Dali") {
+        this.setState({ isValidResponse: true });
+      }
+      if (this.state.valueInput === "dali") {
         this.setState({ isValidResponse: true });
       }
     }
